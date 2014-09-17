@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Kommon.FM Radio</title>
+    <title>Play My Track Radio</title>
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet"  href="css/skin.css" />
     <link rel="stylesheet" href="css/tooltipster.css"/>
@@ -12,19 +12,21 @@
     <script type="text/javascript" src="js/jquery.tooltipster.min.js"></script>
     <script type="text/javascript" src="js/functions.js"></script>
 	<script type="text/javascript" src="js/angular.min.js"></script>
-    <script type="text/javascript" src="js/history.js"></script>
+    <script type="text/javascript" src="js/hitry.js"></script>
+    <script language="javascript" type="text/javascript" src="https://gemini.shoutca.st/system/streaminfo.js"></script>
+
 </head>
 <body>
    <div id="player-wrapper">
        <div id="header-top" class="player-header">
-           <span class="status" id="onair">OFF AIR</span>
+           <span class="status" id="onair"><span id="cc_strinfo_server_chosetim" class="cc_streaminfo"></span>
            <h3 class="stream-title"><marquee id="stream-meta-title"></marquee></h3>
        </div>
        <div style="clear:both;"></div>
        <div id="now-playing">
            <div id="now-playing-inner">
-               <img src="images/artwork.png" alt="" id="now-playing-img" height="100px" width="100px"/>
-               <h3><span id="now-playing-text">Fetching Information...</span></h3>
+              <img id="cc_strinfo_trackimageurl_chosetim" class="cc_streaminfo" alt=""  height="100px" width="100px"/>
+               <h3><span id="now-playing-text">Current song: <div id="cc_strinfo_song_chosetim" class="cc_streaminfo">Loading ...</h3>
                <p><strong>Track:</strong> <span id="now-playing-track"></span><br/>
                 <strong>Artist:</strong> <span id="now-playing-artist"></span><br/>
                 <strong>Album:</strong> <span id="now-playing-album"></span> </p>
@@ -58,8 +60,8 @@
        </div>
        <div style="clear:both;"></div>
        <div id="player">
-           <audio src="http://gemini.shoutca.st:8262/stream" id="audio-player" autoplay="autoplay"></audio>
-       </div>
+           <audio src="http://gemini.shoutca.st:8262/stream" id="audio-player" autoplay="autoplay"> </audio>
+    </div>
    </div>
 </body>
 </html>
